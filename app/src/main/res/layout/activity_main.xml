@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/HomeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/area_title"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView1"
+        android:layout_width="@dimen/cardLayoutWidth"
+        android:layout_height="@dimen/cardLayoutHeight"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/cardLayoutCornerRadius"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView3"
+        app:layout_constraintEnd_toStartOf="@+id/materialCardView2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/HomeTitle"
+        android:backgroundTint="@android:color/holo_orange_light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/cardImagePadding">
+
+            <!--Media-->
+
+            <!--Title & Description-->
+            <ImageView
+                android:id="@+id/cardImage1"
+                android:layout_width="@dimen/cardImageDimensions"
+                android:layout_height="@dimen/cardImageDimensions"
+                android:layout_gravity="center"
+                android:contentDescription="@string/image1"
+                android:src="@drawable/ic_baseline_nature_people_24"
+                app:layout_constraintBottom_toTopOf="@+id/cardTitle1"
+                app:layout_constraintEnd_toEndOf="@+id/cardTitle1"
+                app:layout_constraintStart_toStartOf="@+id/cardTitle1"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/cardTitle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/cardTitlePadding"
+                android:paddingBottom="@dimen/cardTitlePadding"
+                android:text="@string/area_1"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/cardDescription1"
+                app:layout_constraintEnd_toEndOf="@+id/cardDescription1"
+                app:layout_constraintStart_toStartOf="@+id/cardDescription1"
+                app:layout_constraintTop_toBottomOf="@+id/cardImage1" />
+
+            <TextView
+                android:id="@+id/cardDescription1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/cardDescriptionPadding"
+                android:paddingRight="@dimen/cardDescriptionPadding"
+                android:text="AboutArea1AboutArea1AboutArea1"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardTitle1"
+                tools:layout_editor_absoluteX="0dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView2"
+        android:layout_width="@dimen/cardLayoutWidth"
+        android:layout_height="@dimen/cardLayoutHeight"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/cardLayoutCornerRadius"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toEndOf="@+id/materialCardView1"
+        app:layout_constraintTop_toBottomOf="@+id/HomeTitle"
+        android:backgroundTint="@android:color/holo_orange_light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/cardImagePadding">
+
+            <!--Media-->
+            <ImageView
+                android:id="@+id/cardImage2"
+                android:layout_width="@dimen/cardImageDimensions"
+                android:layout_height="@dimen/cardImageDimensions"
+                android:layout_gravity="center"
+                android:contentDescription="@string/image2"
+                android:src="@drawable/ic_baseline_nature_people_24"
+                app:layout_constraintBottom_toTopOf="@+id/cardTitle2"
+                app:layout_constraintEnd_toEndOf="@+id/cardTitle2"
+                app:layout_constraintStart_toStartOf="@+id/cardTitle2"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
+
+            <!--Title & Description-->
+            <TextView
+                android:id="@+id/cardDescription2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/cardDescriptionPadding"
+                android:paddingRight="@dimen/cardDescriptionPadding"
+                android:text="AboutArea2AboutArea2AboutArea2"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardTitle2" />
+
+            <TextView
+                android:id="@+id/cardTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/cardTitlePadding"
+                android:paddingBottom="@dimen/cardTitlePadding"
+                android:text="@string/area_2"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/cardDescription2"
+                app:layout_constraintEnd_toEndOf="@+id/cardDescription2"
+                app:layout_constraintStart_toStartOf="@+id/cardDescription2"
+                app:layout_constraintTop_toBottomOf="@+id/cardImage2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView3"
+        android:layout_width="@dimen/cardLayoutWidth"
+        android:layout_height="@dimen/cardLayoutHeight"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/cardLayoutCornerRadius"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/materialCardView4"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView1"
+        android:backgroundTint="@android:color/holo_orange_light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/cardImagePadding">
+
+            <!--Media-->
+
+            <!--Title & Description-->
+
+            <ImageView
+                android:id="@+id/cardImage3"
+                android:layout_width="@dimen/cardImageDimensions"
+                android:layout_height="@dimen/cardImageDimensions"
+                android:layout_gravity="center"
+                android:contentDescription="@string/image3"
+                android:src="@drawable/ic_baseline_nature_people_24"
+                app:layout_constraintBottom_toTopOf="@+id/cardTitle3"
+                app:layout_constraintEnd_toEndOf="@+id/cardTitle3"
+                app:layout_constraintStart_toStartOf="@+id/cardTitle3"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/cardTitle3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/cardTitlePadding"
+                android:paddingBottom="@dimen/cardTitlePadding"
+                android:text="@string/area_3"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/cardDescription3"
+                app:layout_constraintEnd_toEndOf="@+id/cardDescription3"
+                app:layout_constraintStart_toStartOf="@+id/cardDescription3"
+                app:layout_constraintTop_toBottomOf="@+id/cardImage3" />
+
+            <TextView
+                android:id="@+id/cardDescription3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/cardDescriptionPadding"
+                android:paddingRight="@dimen/cardDescriptionPadding"
+                android:text="AboutArea3AboutArea3AboutArea3"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardTitle3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView4"
+        android:layout_width="@dimen/cardLayoutWidth"
+        android:layout_height="@dimen/cardLayoutHeight"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/cardLayoutCornerRadius"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toEndOf="@+id/materialCardView3"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView2"
+        android:backgroundTint="@android:color/holo_orange_light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/cardImagePadding">
+
+            <!--Media-->
+
+            <!--Title & Description-->
+
+            <ImageView
+                android:id="@+id/cardImage4"
+                android:layout_width="@dimen/cardImageDimensions"
+                android:layout_height="@dimen/cardImageDimensions"
+                android:layout_gravity="center"
+                android:contentDescription="@string/image4"
+                android:src="@drawable/ic_baseline_nature_people_24"
+                app:layout_constraintBottom_toTopOf="@+id/cardTitle4"
+                app:layout_constraintEnd_toEndOf="@+id/cardTitle4"
+                app:layout_constraintStart_toStartOf="@+id/cardTitle4"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/cardTitle4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/cardTitlePadding"
+                android:paddingBottom="@dimen/cardTitlePadding"
+                android:text="@string/area_4"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/cardDescription4"
+                app:layout_constraintEnd_toEndOf="@+id/cardDescription4"
+                app:layout_constraintStart_toStartOf="@+id/cardDescription4"
+                app:layout_constraintTop_toBottomOf="@+id/cardImage4" />
+
+            <TextView
+                android:id="@+id/cardDescription4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/cardDescriptionPadding"
+                android:paddingRight="@dimen/cardDescriptionPadding"
+                android:text="AboutText4AboutText4AboutText4"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardTitle4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

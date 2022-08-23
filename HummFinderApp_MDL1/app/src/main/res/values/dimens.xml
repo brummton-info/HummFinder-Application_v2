@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--All Activities-->
+    <dimen name="titleTextSize">20sp</dimen>
+
+
+    <!--Main Activity-->
+    <dimen name="cardLayoutWidth">150dp</dimen>
+    <dimen name="cardLayoutHeight">200dp</dimen>
+    <dimen name="cardLayoutStrokeWidth">1dp</dimen>
+    <dimen name="cardLayoutElevation">0dp</dimen>
+    <dimen name="cardLayoutCornerRadius">10dp</dimen>
+
+    <dimen name="cardImageDimensions">60dp</dimen>
+    <dimen name="cardImagePadding">10dp</dimen>
+
+    <dimen name="cardTitlePadding">5dp</dimen>
+    <dimen name="cardDescriptionPadding">10dp</dimen>
+
+    <!--Calibration Activity-->
+    <dimen name="calMockViewHeight">200dp</dimen>
+    <dimen name="calButtonDimensions">48dp</dimen>
+
+    <!--Matching Activity-->
+    <dimen name="matButtonDimensions">48dp</dimen>
+</resources>

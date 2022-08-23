@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalibrationActivity">
+
+    <TextView
+        android:id="@+id/calibrationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calibration"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/CalibrationSpektrum"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/CalibrationSpektrum"
+        android:layout_width="329dp"
+        android:layout_height="@dimen/calMockViewHeight"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/calSeekBar"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/calibrationTitle"
+        android:contentDescription="@string/todo"
+        android:background="@color/lightGray"/>
+    <ImageButton
+        android:id="@+id/calPlusButton"
+        android:layout_width="@dimen/calButtonDimensions"
+        android:layout_height="@dimen/calButtonDimensions"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:contentDescription="@string/plusbutton"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/calSeekBar"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/calSeekBar"
+        app:srcCompat="@drawable/ic_baseline_exposure_plus_1_24"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
+    <SeekBar
+        android:id="@+id/calSeekBar"
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/black"
+        android:thumbTint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/calMuteButton"
+        app:layout_constraintEnd_toStartOf="@+id/calPlusButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calMinusButton"
+        app:layout_constraintTop_toBottomOf="@+id/CalibrationSpektrum" />
+    <ImageButton
+        android:id="@+id/calMinusButton"
+        android:layout_width="@dimen/calButtonDimensions"
+        android:layout_height="@dimen/calButtonDimensions"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:contentDescription="@string/minusbutton"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/calSeekBar"
+        app:layout_constraintEnd_toStartOf="@+id/calSeekBar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/calSeekBar"
+        app:srcCompat="@drawable/ic_baseline_exposure_neg_1_24"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+    <ImageButton
+        android:id="@+id/calMuteButton"
+        android:layout_width="@dimen/calButtonDimensions"
+        android:layout_height="@dimen/calButtonDimensions"
+        android:background="@android:color/holo_orange_light"
+        android:contentDescription="@string/mutebutton"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/calSeekBar"
+        app:srcCompat="@drawable/ic_baseline_play_arrow_24"
+        tools:ignore="SpeakableTextPresentCheck" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+    <TextView
+        android:id="@+id/ZeroHZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_0_hz"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/CalibrationSpektrum"
+        app:layout_constraintTop_toBottomOf="@+id/CalibrationSpektrum" />
+    <TextView
+        android:id="@+id/HundertHz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_100_hz"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/TwohundredHz"
+        app:layout_constraintStart_toEndOf="@+id/ZeroHZ"
+        app:layout_constraintTop_toBottomOf="@+id/CalibrationSpektrum" />
+    <TextView
+        android:id="@+id/TwohundredHz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_200_hz"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/CalibrationSpektrum"
+        app:layout_constraintTop_toBottomOf="@+id/CalibrationSpektrum" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
