@@ -9,17 +9,17 @@ class MatchingActivityViewModel: ViewModel() {
         private val toneGenerator = ToneGenerator()
 
         companion object {
-                const val MAX_FREQUENCY = 20000.0
+                const val MAX_FREQUENCY = 500.0
         }
 
-        var currentFrequency: Double = 440.0
+        var currentFrequency: Double = 150.0
                 set(frequency){
                 field = frequency
                 _currentFrequencyText.value =String.format("%.1f", frequency)
                 toneGenerator.frequency = frequency
                 }
 
-        private val _currentFrequencyText = MutableLiveData("440,0")
+        private val _currentFrequencyText = MutableLiveData("150.0")
         val currentFrequencyText:LiveData<String>
                 get() =_currentFrequencyText
 

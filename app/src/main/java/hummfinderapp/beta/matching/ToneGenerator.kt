@@ -11,7 +11,7 @@ class ToneGenerator(): Runnable{
 
     //variable initialization
     private var mute = false
-    var frequency = 440.0
+    var frequency = 150.0
     private var level = 0.3
 
     //(java.lang) > for kotlin create a thread func

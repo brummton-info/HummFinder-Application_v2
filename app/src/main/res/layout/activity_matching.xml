@@ -27,7 +27,7 @@
         android:textAllCaps="false"
         android:textColor="@color/gray"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/startTone"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toBottomOf="@+id/matchingActivityTitle" />
@@ -39,7 +39,7 @@
         app:layout_constraintBottom_toTopOf="@+id/matchingSeekBar"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/startTone">
 
         <TextView
             android:id="@+id/TextMatching"
@@ -76,7 +76,7 @@
 
     <SeekBar
         android:id="@+id/matchingSeekBar"
-        android:layout_width="0dp"
+        android:layout_width="233dp"
         android:layout_height="wrap_content"
         android:progressTint="@color/black"
         android:thumbTint="@color/black"
@@ -128,43 +128,18 @@
         app:layout_constraintTop_toTopOf="@+id/matchingSeekBar"
         app:srcCompat="@drawable/ic_baseline_exposure_plus_1_24" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <ImageButton
+        android:id="@+id/startTone"
+        android:layout_width="@dimen/matButtonDimensions"
+        android:layout_height="@dimen/matButtonDimensions"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:elevation="4dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/startTone"
-            android:layout_width="@dimen/matButtonDimensions"
-            android:layout_height="@dimen/matButtonDimensions"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/stopTone"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_play_arrow_24"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:backgroundTint="@android:color/holo_orange_light"
-            android:elevation="4dp"/>
-
-        <ImageButton
-            android:id="@+id/stopTone"
-            android:layout_width="@dimen/matButtonDimensions"
-            android:layout_height="@dimen/matButtonDimensions"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/startTone"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_stop_24"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:backgroundTint="@android:color/holo_orange_light"
-            android:elevation="4dp"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
