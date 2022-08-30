@@ -1,6 +1,7 @@
 package hummfinderapp.beta
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
@@ -25,7 +26,9 @@ class UnassignedActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.logout -> {
-                Toast.makeText(this,"logout",Toast.LENGTH_SHORT).show()
+                val loginIntent = Intent(this, loginactivity::class.java)
+                Toast.makeText(this,"logged Out!",Toast.LENGTH_SHORT).show()
+                startActivity(loginIntent)
                 return true
             }
             else -> super.onOptionsItemSelected(item)

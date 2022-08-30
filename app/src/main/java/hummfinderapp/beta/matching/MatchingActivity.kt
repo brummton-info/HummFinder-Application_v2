@@ -1,8 +1,11 @@
 package hummfinderapp.beta.matching
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ImageButton
 import android.widget.SeekBar
 import android.widget.TextView
@@ -10,6 +13,7 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.ViewModelProvider
 import hummfinderapp.beta.R
+import hummfinderapp.beta.loginactivity
 
 
 class MatchingActivity : AppCompatActivity() {
@@ -102,13 +106,7 @@ class MatchingActivity : AppCompatActivity() {
                 }
             }
         })
-        //val callback = object : OnBackPressedCallback(true) {
-            //override fun handleOnBackPressed() {
-               //viewModel.stopToneGenerator()
-            //}
 
-        //}
-        //onBackPressedDispatcher.addCallback(callback)
     }
 }
 

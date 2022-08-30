@@ -7,7 +7,7 @@
         app:showAsAction="never"/>
 
     <item
-        android:title="Tinnitus Frequency"
+        android:title="Tinnitus (Hz)"
         android:id="@+id/matchingfrequency"
         app:showAsAction="never"/>
 
