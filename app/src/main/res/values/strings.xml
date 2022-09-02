@@ -26,4 +26,6 @@
     <string name="_200_hz">200 Hz</string>
     <string name="_0_hz">0 Hz</string>
     <string name="_100_hz">100 Hz</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
