@@ -16,7 +16,7 @@
         android:theme="@style/Theme.HummFinderApp"
         tools:targetApi="31">
         <activity
-            android:name=".loginactivity"
+            android:name=".login.loginactivity"
             android:exported="false" />
         <activity
             android:name=".infoslider.infoslider"
@@ -28,14 +28,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UnassignedActivity"
+            android:name=".unassigned.UnassignedActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".CalibrationActivity"
+            android:name=".calibration.CalibrationActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -49,7 +49,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".InfoActivity"
+            android:name=".info.InfoActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

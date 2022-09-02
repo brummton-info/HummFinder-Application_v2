@@ -1,7 +1,8 @@
-package hummfinderapp.beta
+package hummfinderapp.beta.unassigned
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import hummfinderapp.beta.R
 
 class UnassignedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

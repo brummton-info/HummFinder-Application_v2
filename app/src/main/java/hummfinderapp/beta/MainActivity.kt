@@ -4,7 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
+import hummfinderapp.beta.calibration.CalibrationActivity
+import hummfinderapp.beta.info.InfoActivity
 import hummfinderapp.beta.matching.MatchingActivity
+import hummfinderapp.beta.unassigned.UnassignedActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         val materialCardView1 = findViewById<CardView>(R.id.materialCardView1)
         materialCardView1.setOnClickListener{
-            val infoIntent = Intent(this,InfoActivity::class.java)
+            val infoIntent = Intent(this, InfoActivity::class.java)
             startActivity(infoIntent)
         }
 
@@ -25,13 +28,13 @@ class MainActivity : AppCompatActivity() {
 
         val materialCardView3 = findViewById<CardView>(R.id.materialCardView3)
         materialCardView3.setOnClickListener{
-            val calibrationIntent = Intent(this,CalibrationActivity::class.java)
+            val calibrationIntent = Intent(this, CalibrationActivity::class.java)
             startActivity(calibrationIntent)
         }
 
         val materialCardView4 = findViewById<CardView>(R.id.materialCardView4)
         materialCardView4.setOnClickListener{
-            val unassignedIntent = Intent(this,UnassignedActivity::class.java)
+            val unassignedIntent = Intent(this, UnassignedActivity::class.java)
             startActivity(unassignedIntent)
         }
     }
