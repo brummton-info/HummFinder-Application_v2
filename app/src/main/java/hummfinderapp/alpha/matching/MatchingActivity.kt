@@ -1,6 +1,5 @@
-package hummfinderapp.beta.matching
+package hummfinderapp.alpha.matching
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +8,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import hummfinderapp.beta.R
+import hummfinderapp.alpha.R
 
 
 class MatchingActivity : AppCompatActivity() {

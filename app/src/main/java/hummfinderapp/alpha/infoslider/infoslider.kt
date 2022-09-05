@@ -1,4 +1,4 @@
-package hummfinderapp.beta.infoslider
+package hummfinderapp.alpha.infoslider
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
-import hummfinderapp.beta.R
-import hummfinderapp.beta.login.loginactivity
+import hummfinderapp.alpha.R
+import hummfinderapp.alpha.login.loginactivity
 
 class infoslider : AppCompatActivity() {
 

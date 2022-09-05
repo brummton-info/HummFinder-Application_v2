@@ -1,4 +1,4 @@
-package hummfinderapp.beta.matching
+package hummfinderapp.alpha.matching
 
 import android.media.AudioFormat
 import android.media.AudioManager

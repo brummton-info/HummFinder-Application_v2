@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="hummfinderapp.beta">
+    package="hummfinderapp.alpha">
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
@@ -16,10 +16,10 @@
         android:theme="@style/Theme.HummFinderApp"
         tools:targetApi="31">
         <activity
-            android:name=".login.loginactivity"
+            android:name="hummfinderapp.alpha.login.loginactivity"
             android:exported="false" />
         <activity
-            android:name=".infoslider.infoslider"
+            android:name="hummfinderapp.alpha.infoslider.infoslider"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar.Theme.NoActionBar">
             <intent-filter>
@@ -28,35 +28,35 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".unassigned.UnassignedActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="hummfinderapp.alpha.unassigned.UnassignedActivity"
+            android:parentActivityName="hummfinderapp.alpha.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="hummfinderapp.alpha.MainActivity" />
         </activity>
         <activity
-            android:name=".calibration.CalibrationActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="hummfinderapp.alpha.calibration.CalibrationActivity"
+            android:parentActivityName="hummfinderapp.alpha.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="hummfinderapp.alpha.MainActivity" />
         </activity>
         <activity
-            android:name=".matching.MatchingActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="hummfinderapp.alpha.matching.MatchingActivity"
+            android:parentActivityName="hummfinderapp.alpha.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="hummfinderapp.alpha.MainActivity" />
         </activity>
         <activity
-            android:name=".info.InfoActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="hummfinderapp.alpha.info.InfoActivity"
+            android:parentActivityName="hummfinderapp.alpha.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="hummfinderapp.alpha.MainActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="hummfinderapp.alpha.MainActivity"
             android:exported="false" />
     </application>
 </manifest>

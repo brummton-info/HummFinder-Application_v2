@@ -1,4 +1,4 @@
-package hummfinderapp.beta.login
+package hummfinderapp.alpha.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import hummfinderapp.beta.MainActivity
-import hummfinderapp.beta.R
+import hummfinderapp.alpha.MainActivity
+import hummfinderapp.alpha.R
 
 class loginactivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

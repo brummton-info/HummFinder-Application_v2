@@ -15,13 +15,13 @@
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/CalibrationSpektrum"
+        app:layout_constraintBottom_toTopOf="@+id/calibrationspektrum"
         app:layout_constraintEnd_toStartOf="@+id/guide2"
         app:layout_constraintStart_toStartOf="@+id/guide1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/CalibrationSpektrum"
+        android:id="@+id/calibrationspektrum"
         android:layout_width="0dp"
         android:layout_height="@dimen/calMockViewHeight"
         android:background="@color/lightGray"
@@ -55,7 +55,7 @@
         app:layout_constraintBottom_toTopOf="@+id/calMuteButton"
         app:layout_constraintEnd_toStartOf="@+id/calPlusButton"
         app:layout_constraintStart_toEndOf="@+id/calMinusButton"
-        app:layout_constraintTop_toBottomOf="@+id/CalibrationSpektrum" />
+        app:layout_constraintTop_toBottomOf="@+id/calibrationspektrum" />
 
     <ImageButton
         android:id="@+id/calMinusButton"
@@ -94,7 +94,7 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guide1"
-        app:layout_constraintTop_toBottomOf="@+id/CalibrationSpektrum" />
+        app:layout_constraintTop_toBottomOf="@+id/calibrationspektrum" />
 
     <TextView
         android:id="@+id/HundertHz"
@@ -105,7 +105,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/TwohundredHz"
         app:layout_constraintStart_toStartOf="@+id/ZeroHZ"
-        app:layout_constraintTop_toBottomOf="@+id/CalibrationSpektrum" />
+        app:layout_constraintTop_toBottomOf="@+id/calibrationspektrum" />
 
     <TextView
         android:id="@+id/TwohundredHz"

@@ -1,13 +1,13 @@
-package hummfinderapp.beta
+package hummfinderapp.alpha
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
-import hummfinderapp.beta.calibration.CalibrationActivity
-import hummfinderapp.beta.info.InfoActivity
-import hummfinderapp.beta.matching.MatchingActivity
-import hummfinderapp.beta.unassigned.UnassignedActivity
+import hummfinderapp.alpha.calibration.CalibrationActivity
+import hummfinderapp.alpha.info.InfoActivity
+import hummfinderapp.alpha.matching.MatchingActivity
+import hummfinderapp.alpha.unassigned.UnassignedActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

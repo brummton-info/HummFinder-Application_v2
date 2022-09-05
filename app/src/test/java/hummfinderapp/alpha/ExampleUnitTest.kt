@@ -1,4 +1,4 @@
-package hummfinderapp.beta
+package hummfinderapp.alpha
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package hummfinderapp.beta.calibration
+package hummfinderapp.alpha.calibration
 
 import kotlin.math.absoluteValue
 import kotlin.math.log10

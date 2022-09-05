@@ -1,13 +1,13 @@
-package hummfinderapp.beta.calibration
+package hummfinderapp.alpha.info
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import hummfinderapp.beta.R
+import hummfinderapp.alpha.R
 
-class CalibrationActivity : AppCompatActivity() {
+class InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calibration)
+        setContentView(R.layout.activity_info)
     }
 
 }

@@ -1,4 +1,4 @@
-package hummfinderapp.beta.infoslider
+package hummfinderapp.alpha.infoslider
 
 data class SliderData(
     // on below line we are creating a string

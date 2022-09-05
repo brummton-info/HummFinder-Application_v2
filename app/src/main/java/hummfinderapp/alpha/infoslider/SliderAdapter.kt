@@ -1,4 +1,4 @@
-package hummfinderapp.beta.infoslider
+package hummfinderapp.alpha.infoslider
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.PagerAdapter
-import hummfinderapp.beta.R
+import hummfinderapp.alpha.R
 
 class SliderAdapter(
     val context: Context,

@@ -1,4 +1,4 @@
-package hummfinderapp.beta.calibration
+package hummfinderapp.alpha.calibration
 
 // Matlab default colormap: parula
 val PARULA_COLORMAP_INVERSED = intArrayOf(

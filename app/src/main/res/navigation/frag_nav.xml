@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/calibrationFragment"
-        android:name="hummfinderapp.beta.fragments.CalibrationFragment"
+        android:name="hummfinderapp.alpha.fragments.CalibrationFragment"
         android:label="fragment_calibration"
         tools:layout="@layout/fragment_calibration" />
 </navigation>
