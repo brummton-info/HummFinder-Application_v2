@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
+import hummfinderapp.alpha.MainActivity
 import hummfinderapp.alpha.R
 import hummfinderapp.alpha.login.loginactivity
 
@@ -48,7 +49,7 @@ class infoslider : AppCompatActivity() {
         //}
         skipBtn.setOnClickListener{
             val current = viewPager.currentItem + 1
-            val i = Intent(this, loginactivity::class.java)
+            val i = Intent(this, MainActivity::class.java)
             if(viewPager != null && current < sliderList.size){
                 viewPager.setCurrentItem(current)
             }

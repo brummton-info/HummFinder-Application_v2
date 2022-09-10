@@ -1,51 +1,65 @@
 package hummfinderapp.alpha.matching
 
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import android.app.Application
+import android.util.Log
+import androidx.lifecycle.*
+import hummfinderapp.alpha.repository.DataStoreRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class MatchingActivityViewModel: ViewModel() {
-        private val toneGenerator = ToneGenerator()
+class MatchingActivityViewModel (application: Application): AndroidViewModel(application) {
 
-        companion object {
-                const val MAX_FREQUENCY = 500.0
+        //PREFERENCE DATASTORE
+        private val repository = DataStoreRepository(application)
+        val readFromDataStoreFrequency = repository.readFromDataStoreFrequency.asLiveData()
+        val readFromDataStoreLevel = repository.readFromDataStoreLevel.asLiveData()
+
+        fun saveToDataStore(frequency: String, level:String) = viewModelScope.launch(Dispatchers.IO) {
+                repository.saveToDataStore(frequency,level)
         }
 
-        var currentFrequency: Double = 150.0
+        private val TONEGENERATOR = ToneGenerator()
+        private val TAG = "Matching ViewModel"
+
+        //MUTABLE LIVE DATA FREQUENCY
+        private var _frequency = MutableLiveData<Int>()
+        fun frequency(): LiveData<Int>{
+                return _frequency
+        }
+
+        // TONE GENERATOR FREQUENCY VARIABLE INITIALIZATION
+        var TGFrequency: Double = 150.0
                 set(frequency){
-                field = frequency
-                _currentFrequencyText.value =String.format("%.1f", frequency)
-                toneGenerator.frequency = frequency
+                        field = frequency
+                        TONEGENERATOR.frequency = frequency
+                        _frequency.value = frequency.toInt()
                 }
 
-        private val _currentFrequencyText = MutableLiveData("150.0")
-        val currentFrequencyText:LiveData<String>
-                get() =_currentFrequencyText
-
         fun startToneGenerator(){
-                toneGenerator.start()
+                TONEGENERATOR.start()
         }
 
-        //function stop >
         fun stopToneGenerator(){
-                toneGenerator.stop()
+                TONEGENERATOR.stop()
+                Log.d(TAG, "Tone Generator Stopped > btn")
         }
 
-        //increaseFrequencyBy1
         fun increaseFrequencyByOne(){
-                currentFrequency = currentFrequency + 1
+                TGFrequency = TGFrequency + 1
         }
 
-        //decreaseFrequencyBy1
         fun decreaseFrequencyByOne(){
-                currentFrequency = currentFrequency - 1
+                TGFrequency = TGFrequency - 1
         }
 
-        //seekbarchange
         fun onSeekBarProgressChanged(progress:Int){
-                currentFrequency = progress.toDouble()
-                //val frequency = 10.0.pow(progress.toDouble() / 100.0 * log10(MAX_FREQUENCY))
-                //currentFrequency = frequency
+                TGFrequency = progress.toDouble()
+        }
+
+        override fun onCleared() {
+                super.onCleared()
+                TONEGENERATOR.stop()
+                Log.d(TAG,"Tone Generator stopped > onBackPressed")
         }
 }

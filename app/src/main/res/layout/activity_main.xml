@@ -10,7 +10,7 @@
         android:id="@+id/HomeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/area_title"
+        android:text="Home"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -23,8 +23,10 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView1"
-        android:layout_width="@dimen/cardLayoutWidth"
-        android:layout_height="@dimen/cardLayoutHeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:clickable="true"
         android:focusable="true"
         app:cardCornerRadius="@dimen/cardLayoutCornerRadius"
@@ -32,8 +34,7 @@
         app:layout_constraintBottom_toTopOf="@+id/materialCardView3"
         app:layout_constraintEnd_toStartOf="@+id/materialCardView2"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/HomeTitle"
-        android:backgroundTint="@android:color/holo_orange_light">
+        app:layout_constraintTop_toTopOf="@+id/guideline7">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -63,11 +64,11 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/cardTitlePadding"
                 android:paddingBottom="@dimen/cardTitlePadding"
-                android:text="@string/area_1"
+                android:text="Info"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/cardDescription1"
                 app:layout_constraintEnd_toEndOf="@+id/cardDescription1"
                 app:layout_constraintStart_toStartOf="@+id/cardDescription1"
@@ -92,8 +93,10 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView2"
-        android:layout_width="@dimen/cardLayoutWidth"
-        android:layout_height="@dimen/cardLayoutHeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:clickable="true"
         android:focusable="true"
         app:cardCornerRadius="@dimen/cardLayoutCornerRadius"
@@ -101,8 +104,7 @@
         app:layout_constraintBottom_toTopOf="@+id/materialCardView4"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toEndOf="@+id/materialCardView1"
-        app:layout_constraintTop_toBottomOf="@+id/HomeTitle"
-        android:backgroundTint="@android:color/holo_orange_light">
+        app:layout_constraintTop_toTopOf="@+id/guideline7">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -144,11 +146,11 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/cardTitlePadding"
                 android:paddingBottom="@dimen/cardTitlePadding"
-                android:text="@string/area_2"
+                android:text="Matching"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/cardDescription2"
                 app:layout_constraintEnd_toEndOf="@+id/cardDescription2"
                 app:layout_constraintStart_toStartOf="@+id/cardDescription2"
@@ -159,17 +161,18 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView3"
-        android:layout_width="@dimen/cardLayoutWidth"
-        android:layout_height="@dimen/cardLayoutHeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:clickable="true"
         android:focusable="true"
         app:cardCornerRadius="@dimen/cardLayoutCornerRadius"
         app:cardElevation="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/materialCardView4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView1"
-        android:backgroundTint="@android:color/holo_orange_light">
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -200,11 +203,11 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/cardTitlePadding"
                 android:paddingBottom="@dimen/cardTitlePadding"
-                android:text="@string/area_3"
+                android:text="Calibration"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/cardDescription3"
                 app:layout_constraintEnd_toEndOf="@+id/cardDescription3"
                 app:layout_constraintStart_toStartOf="@+id/cardDescription3"
@@ -229,17 +232,18 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView4"
-        android:layout_width="@dimen/cardLayoutWidth"
-        android:layout_height="@dimen/cardLayoutHeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:clickable="true"
         android:focusable="true"
         app:cardCornerRadius="@dimen/cardLayoutCornerRadius"
         app:cardElevation="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toEndOf="@+id/materialCardView3"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView2"
-        android:backgroundTint="@android:color/holo_orange_light">
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -270,11 +274,11 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/cardTitlePadding"
                 android:paddingBottom="@dimen/cardTitlePadding"
-                android:text="@string/area_4"
+                android:text="Unassigned"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/cardDescription4"
                 app:layout_constraintEnd_toEndOf="@+id/cardDescription4"
                 app:layout_constraintStart_toStartOf="@+id/cardDescription4"
@@ -303,14 +307,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.90" />
+        app:layout_constraintGuide_percent="0.95" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
@@ -318,5 +322,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
