@@ -2,7 +2,6 @@ package hummfinderapp.alpha.matching
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageButton
@@ -116,13 +115,13 @@ class MatchingActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.appbarmenu,menu)
+        menuInflater.inflate(R.menu.menuwithsave,menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val frequency = TextMatching.text.toString()
-        val level = "none"
+        val level = "0.3"
         when (item.itemId){
             R.id.misave -> viewModel.saveToDataStore(frequency,level)
             R.id.givefeedback -> Toast.makeText(this,"Thanks for your feedback",Toast.LENGTH_SHORT).show()

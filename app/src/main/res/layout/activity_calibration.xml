@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:progressTint="@color/black"
         android:thumbTint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/calMuteButton"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalPlay"
         app:layout_constraintEnd_toStartOf="@+id/calPlusButton"
         app:layout_constraintStart_toEndOf="@+id/calMinusButton"
         app:layout_constraintTop_toBottomOf="@+id/calibrationspektrum" />
@@ -72,7 +72,7 @@
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/calMuteButton"
+        android:id="@+id/btnCalPlay"
         android:layout_width="@dimen/calButtonDimensions"
         android:layout_height="@dimen/calButtonDimensions"
         android:background="@android:color/holo_orange_light"

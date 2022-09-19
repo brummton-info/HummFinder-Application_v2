@@ -15,7 +15,7 @@
 
     <item
         android:id="@+id/closeapp"
-        android:title="Close App"
+        android:title="Back"
         app:showAsAction="never"/>
 
 </menu>

@@ -59,7 +59,7 @@ class DataStoreRepository(context:Context) {
             }
         }
         .map { preference ->
-            val level = preference[PreferenceKeys.level] ?: "none"
+            val level = preference[PreferenceKeys.level] ?: "0.3"
             level
         }
 }
