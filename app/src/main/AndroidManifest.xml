@@ -30,32 +30,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="hummfinderapp.alpha.unassigned.UnassignedActivity"
-            android:parentActivityName="hummfinderapp.alpha.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="hummfinderapp.alpha.MainActivity" />
+            android:name="hummfinderapp.alpha.unassigned.UnassignedActivity">
+<!--            android:parentActivityName="hummfinderapp.alpha.MainActivity">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.PARENT_ACTIVITY"-->
+<!--                android:value="hummfinderapp.alpha.MainActivity" />-->
         </activity>
         <activity
-            android:name="hummfinderapp.alpha.calibration.CalibrationActivity"
-            android:parentActivityName="hummfinderapp.alpha.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="hummfinderapp.alpha.MainActivity" />
+            android:name="hummfinderapp.alpha.calibration.CalibrationActivity">
+<!--            android:parentActivityName="hummfinderapp.alpha.MainActivity">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.PARENT_ACTIVITY"-->
+<!--                android:value="hummfinderapp.alpha.MainActivity" />-->
         </activity>
         <activity
-            android:name="hummfinderapp.alpha.matching.MatchingActivity"
-            android:parentActivityName="hummfinderapp.alpha.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="hummfinderapp.alpha.MainActivity" />
+            android:name="hummfinderapp.alpha.matching.MatchingActivity">
+<!--            android:parentActivityName="hummfinderapp.alpha.MainActivity">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.PARENT_ACTIVITY"-->
+<!--                android:value="hummfinderapp.alpha.MainActivity" />-->
         </activity>
         <activity
-            android:name="hummfinderapp.alpha.info.InfoActivity"
-            android:parentActivityName="hummfinderapp.alpha.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="hummfinderapp.alpha.MainActivity" />
+            android:name="hummfinderapp.alpha.info.InfoActivity">
+<!--            android:parentActivityName="hummfinderapp.alpha.MainActivity"-->
+
+<!--            <meta-data-->
+<!--                android:name="android.support.PARENT_ACTIVITY"-->
+<!--                android:value="hummfinderapp.alpha.MainActivity" />-->
         </activity>
         <activity
             android:name="hummfinderapp.alpha.MainActivity"

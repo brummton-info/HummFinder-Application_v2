@@ -20,6 +20,7 @@ class MatchingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_matching)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         TextMatching = findViewById<TextView>(R.id.TextMatching)
         val decreaseFrequency = findViewById<ImageButton>(R.id.decreaseFrequency)
@@ -35,9 +36,17 @@ class MatchingActivity : AppCompatActivity() {
 
         viewModel.frequency().observe(this,{
             TextMatching.text = it.toString()
+            seekBar.progress = it
         })
+
+        //OBSERVE FREQUENCY
         viewModel.readFromDataStoreFrequency.observe(this,{
                 frequency -> viewModel.TGFrequency = frequency.toDouble()
+        })
+
+        //OBSERVE LEVEL
+        viewModel.readFromDataStoreLevel.observe(this,{
+            level -> viewModel.TGLevel = level.toDouble()
         })
 
         statefulbutton.setOnClickListener {
@@ -85,7 +94,6 @@ class MatchingActivity : AppCompatActivity() {
         }
 
         seekBar.max = (MAX_FREQUENCY - 0)
-        seekBar.progress = 150
 
         seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar:SeekBar?, progress: Int, fromUser: Boolean) {
@@ -123,10 +131,16 @@ class MatchingActivity : AppCompatActivity() {
         val frequency = TextMatching.text.toString()
         val level = "0.3"
         when (item.itemId){
-            R.id.misave -> viewModel.saveToDataStore(frequency,level)
+            android.R.id.home -> onBackPressed() /*onBackPressed() override*/
+            R.id.misave -> viewModel.saveToDataStore(frequency, level)
             R.id.givefeedback -> Toast.makeText(this,"Thanks for your feedback",Toast.LENGTH_SHORT).show()
             R.id.closeapp -> finish()
         }
+        return true
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
         return true
     }
 }

@@ -1,9 +1,6 @@
 package hummfinderapp.alpha.calibration
 
-import kotlin.math.absoluteValue
-import kotlin.math.log10
-import kotlin.math.pow
-import kotlin.math.sqrt
+import kotlin.math.*
 
 /**
  * Computes the absolute values of the complex valued result from the FFT.
@@ -13,7 +10,8 @@ import kotlin.math.sqrt
  */
 fun absoluteFromComplex(input: FloatArray): FloatArray {
     var output = FloatArray(input.size / 2) { i ->
-        sqrt(input[2 * i].pow(2) + input[2 * i + 1].pow(2))
+        //sqrt(input[2 * i].pow(2) + input[2 * i + 1].pow(2))
+        hypot(input[2 * i].toDouble(), input[2 * i + 1].toDouble()).toFloat()
     }
     output[0] = input[0].absoluteValue
     output += input[1].absoluteValue
@@ -31,5 +29,13 @@ fun decibelFromAbsolute(input: FloatArray): FloatArray {
 
     return FloatArray(input.size) {
         20f * log10(input[it] / maxValue)
+    }
+}
+
+fun decibelFromAbsoluteReverse(input: FloatArray): FloatArray {
+    val maxValue = input.maxOrNull()!!
+
+    return FloatArray(input.size) {
+        20f * log10(maxValue / input[it])
     }
 }

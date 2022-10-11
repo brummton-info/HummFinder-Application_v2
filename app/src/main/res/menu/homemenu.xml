@@ -6,10 +6,4 @@
         android:id="@+id/homegivefeedback"
         android:title="Give Feedback"
         app:showAsAction="never"/>
-
-    <item
-        android:id="@+id/homecloseapp"
-        android:title="Close App"
-        app:showAsAction="never"/>
-
 </menu>

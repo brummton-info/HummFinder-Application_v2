@@ -9,6 +9,7 @@ import androidx.lifecycle.*
 import hummfinderapp.alpha.matching.ToneGenerator
 import hummfinderapp.alpha.repository.DataStoreRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jtransforms.fft.FloatFFT_1D
@@ -44,10 +45,16 @@ class calibrationViewModel(application: Application): AndroidViewModel(applicati
         return _level
     }
 
-    //MUTABLE LIVE DATA
+    //MUTABLE LIVE DATA SPECTROGRAM
     private val spectrogramColorArray = MutableLiveData<IntArray>(IntArray(WIDTH * HEIGHT))
     val generatedBitmap: LiveData<Bitmap> = Transformations.map(spectrogramColorArray) {
         bitmapFromData(it)
+    }
+
+    //MUTABLE LIVE DATA DECIBEL VALUES
+    private var _decibelValuesToSpectrum = MutableLiveData<FloatArray>(FloatArray(WIDTH))
+    fun decibelValuesToSpectrum(): LiveData<FloatArray>{
+        return _decibelValuesToSpectrum
     }
 
     var TGFrequency: Double = 150.0
@@ -78,12 +85,16 @@ class calibrationViewModel(application: Application): AndroidViewModel(applicati
 
     //INCREASE LEVEL BY ONE
     fun increaseLevelByOne(){
-        TGLevel = TGLevel + 1
+        val base = 10
+        val exponent = 0.05
+        TGLevel += Math.pow(base.toDouble(),exponent)
     }
 
     //DECREASE LEVEL BY ONE
     fun decreaseLevelByOne(){
-        TGLevel = TGLevel - 1
+        val base = 10
+        val exponent = 0.05
+        TGLevel -= Math.pow(base.toDouble(),exponent)
     }
 
     //SEEKBAR
@@ -122,6 +133,10 @@ class calibrationViewModel(application: Application): AndroidViewModel(applicati
                     val histogram = absolutes.copyOf(FREQUENCY_CUTOFF_UPPER)
 
                     val histogramInDecibel = decibelFromAbsolute(histogram)
+                    val histogramInDecibelReverse = decibelFromAbsoluteReverse(histogram)
+                    _decibelValuesToSpectrum.postValue(histogramInDecibelReverse)
+
+                    println("Magnitudes Reverse: ${histogramInDecibelReverse.joinToString(",")}")
 
                     val minDecibel = histogramInDecibel.minOrNull()!!
 

@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.lifecycle.*
 import hummfinderapp.alpha.repository.DataStoreRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
 class MatchingActivityViewModel (application: Application): AndroidViewModel(application) {
@@ -34,6 +35,12 @@ class MatchingActivityViewModel (application: Application): AndroidViewModel(app
                         field = frequency
                         TONEGENERATOR.frequency = frequency
                         _frequency.value = frequency.toInt()
+                }
+
+        var TGLevel: Double = 0.3
+                set(level) {
+                        field = level
+                        TONEGENERATOR.level = level
                 }
 
         fun startToneGenerator(){
