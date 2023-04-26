@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".calibration.CalibrationActivity">
 
-
     <TextView
         android:id="@+id/calibrationTitle"
         android:layout_width="wrap_content"
@@ -15,26 +14,22 @@
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/calibrationspektrum"
+        app:layout_constraintBottom_toTopOf="@+id/lcv_lineView"
         app:layout_constraintEnd_toStartOf="@+id/guide2"
         app:layout_constraintStart_toStartOf="@+id/guide1"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <hummfinderapp.alpha.calibration.Spectrum
+    <!--<hummfinderapp.alpha.calibration.Spectrum
         android:id="@+id/spektrum"
         android:layout_width="304dp"
         android:layout_height="205dp"
-        app:layout_constraintEnd_toEndOf="@+id/calibrationspektrum"
-        app:layout_constraintStart_toStartOf="@+id/calibrationspektrum"
-        app:layout_constraintTop_toTopOf="@+id/calibrationspektrum" />
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="199dp" />-->
 
-    <ImageView
-        android:id="@+id/calibrationspektrum"
+    <hummfinderapp.alpha.lineChart.LineChartView
+        android:id="@+id/lcv_lineView"
         android:layout_width="300dp"
-        android:layout_height="@dimen/calMockViewHeight"
-        android:background="@color/lightGray"
-        android:contentDescription="@string/todo"
-        android:scaleType="fitXY"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toTopOf="@+id/calSeekBar"
         app:layout_constraintEnd_toStartOf="@+id/guide2"
         app:layout_constraintStart_toStartOf="@+id/guide1"
@@ -53,19 +48,30 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/calSeekBar"
         app:layout_constraintTop_toTopOf="@+id/calSeekBar"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
 
-    <SeekBar
+    <com.google.android.material.slider.Slider
         android:id="@+id/calSeekBar"
         android:layout_width="233dp"
         android:layout_height="wrap_content"
-        android:progressTint="@color/black"
-        android:thumbTint="@color/black"
+        android:stepSize="5"
+        android:valueFrom="0"
+        android:valueTo="100"
+        app:haloColor="@color/sliderThumbHalo"
         app:layout_constraintBottom_toTopOf="@+id/btnCalPlay"
         app:layout_constraintEnd_toStartOf="@+id/calPlusButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/calMinusButton"
-        app:layout_constraintTop_toBottomOf="@+id/calibrationspektrum" />
+        app:layout_constraintTop_toBottomOf="@+id/lcv_lineView"
+        app:thumbColor="@color/seekBarThumb"
+        app:thumbRadius="7dp"
+        app:thumbStrokeColor="@color/black"
+        app:thumbStrokeWidth="2dp"
+        app:tickColor="@color/black"
+        app:trackColorActive="@color/seekBarProgress"
+        app:trackColorInactive="@color/seekBarProgress"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/calMinusButton"
@@ -80,6 +86,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guide1"
         app:layout_constraintTop_toTopOf="@+id/calSeekBar"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -92,6 +99,7 @@
         android:src="@drawable/ic_baseline_play_arrow_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guide2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guide1"
         app:layout_constraintTop_toBottomOf="@+id/calSeekBar"
         tools:ignore="SpeakableTextPresentCheck" />

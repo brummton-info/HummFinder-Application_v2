@@ -98,7 +98,7 @@ class calibrationViewModel(application: Application): AndroidViewModel(applicati
     }
 
     //SEEKBAR
-    fun onSeekBarProgressChanged(progress:Int){
+    fun onSeekBarProgressChanged(progress:Float){
         TGLevel = progress.toDouble()
     }
 
@@ -134,8 +134,9 @@ class calibrationViewModel(application: Application): AndroidViewModel(applicati
 
                     val histogramInDecibel = decibelFromAbsolute(histogram)
                     val histogramInDecibelReverse = decibelFromAbsoluteReverse(histogram)
-                    _decibelValuesToSpectrum.postValue(histogramInDecibelReverse)
-
+                    //val incomingAudioFloat = DoubletoFloatFun(histogramInDecibelReverse)
+                    _decibelValuesToSpectrum.postValue(histogramInDecibel)
+                    //_decibelValuesToSpectrum.postValue(histogramInDecibel)
                     println("Magnitudes Reverse: ${histogramInDecibelReverse.joinToString(",")}")
 
                     val minDecibel = histogramInDecibel.minOrNull()!!

@@ -60,7 +60,7 @@ class MatchingActivityViewModel (application: Application): AndroidViewModel(app
                 TGFrequency = TGFrequency - 1
         }
 
-        fun onSeekBarProgressChanged(progress:Int){
+        fun onSeekBarProgressChanged(progress:Float){
                 TGFrequency = progress.toDouble()
         }
 

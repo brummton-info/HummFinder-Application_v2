@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LineChartView_linechart_lineWidth">3.0</declare-styleable>
+    <declare-styleable name="LineChartView">0</declare-styleable>
+    <attr name="LineChartStyle" />
+</resources>

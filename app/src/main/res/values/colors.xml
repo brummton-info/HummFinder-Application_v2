@@ -10,4 +10,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lightGray">#F5F5F5</color>
     <color name="Hummfindercolor">#FFCC00</color>
+    <color name="seekBarProgress">#FF7F7F</color>
+    <color name="seekBarThumb">#8bc34a</color>
+    <color name="sliderThumbHalo">#dcedc9</color>
+    <color name="sliderTrackColor">#D3D3D3</color>
 </resources>

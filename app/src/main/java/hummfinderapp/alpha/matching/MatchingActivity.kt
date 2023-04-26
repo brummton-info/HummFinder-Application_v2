@@ -9,6 +9,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.slider.Slider
 import hummfinderapp.alpha.R
 
 
@@ -25,10 +26,10 @@ class MatchingActivity : AppCompatActivity() {
         TextMatching = findViewById<TextView>(R.id.TextMatching)
         val decreaseFrequency = findViewById<ImageButton>(R.id.decreaseFrequency)
         val increaseFrequency = findViewById<ImageButton>(R.id.increaseFrequency)
-        val seekBar = findViewById<SeekBar>(R.id.matchingSeekBar)
+        val slider = findViewById<Slider>(R.id.matchingSeekBar)
         val TAG = "MATCHING ACTIVITY"
         val MAX_FREQUENCY = 500
-        var END_ONSTOP = 0
+        var END_ONSTOP = 0.0
         var BUTTON_STATE = 0
 
         val statefulbutton = findViewById<ImageButton>(R.id.startTone)
@@ -36,7 +37,7 @@ class MatchingActivity : AppCompatActivity() {
 
         viewModel.frequency().observe(this,{
             TextMatching.text = it.toString()
-            seekBar.progress = it
+            slider.value = it.toFloat()
         })
 
         //OBSERVE FREQUENCY
@@ -72,19 +73,19 @@ class MatchingActivity : AppCompatActivity() {
         }
 
         decreaseFrequency.setOnClickListener {
-                END_ONSTOP = viewModel.TGFrequency.toInt()
-                if (END_ONSTOP != 0){
+                END_ONSTOP = viewModel.TGFrequency
+                if (END_ONSTOP != 0.0){
                     viewModel.decreaseFrequencyByOne()
-                    if (END_ONSTOP == 30){
+                    if (END_ONSTOP == 30.0){
                         Toast.makeText(this@MatchingActivity, "Below large speaker threshold",Toast.LENGTH_SHORT).show()
                     }
-                    else if (END_ONSTOP == 50){
+                    else if (END_ONSTOP == 50.0){
                         Toast.makeText(this@MatchingActivity, "Below in-ear headphone threshold",Toast.LENGTH_SHORT).show()
                     }
-                    else if (END_ONSTOP == 80){
+                    else if (END_ONSTOP == 80.0){
                         Toast.makeText(this@MatchingActivity, "Below bluetooth speaker threshold",Toast.LENGTH_SHORT).show()
                     }
-                    else if (END_ONSTOP == 100){
+                    else if (END_ONSTOP == 100.0){
                         Toast.makeText(this@MatchingActivity, "Below smartphone speaker threshold",Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -93,33 +94,36 @@ class MatchingActivity : AppCompatActivity() {
             }
         }
 
-        seekBar.max = (MAX_FREQUENCY - 0)
+        slider.valueTo = MAX_FREQUENCY.toFloat()
 
-        seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
-            override fun onProgressChanged(seekBar:SeekBar?, progress: Int, fromUser: Boolean) {
-                viewModel.onSeekBarProgressChanged(progress)
+        slider.addOnSliderTouchListener(object: Slider.OnSliderTouchListener{
+            override fun onStartTrackingTouch(slider: Slider) {
             }
-            override fun onStartTrackingTouch(seekBar:SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar:SeekBar?) {
-                if (seekBar != null) {
-                    END_ONSTOP = seekBar.progress
-                    if (END_ONSTOP < 30){
+
+            override fun onStopTrackingTouch(slider: Slider) {
+                if (slider != null) {
+                    END_ONSTOP = slider.value.toDouble()
+                    if (END_ONSTOP < 30.0){
                         return Toast.makeText(this@MatchingActivity, "Below large speaker threshold",Toast.LENGTH_SHORT).show()
                     }
-                    else if (END_ONSTOP < 50){
+                    else if (END_ONSTOP < 50.0){
                         return Toast.makeText(this@MatchingActivity, "Below in-ear headphone threshold",Toast.LENGTH_SHORT).show()
                     }
-                    else if (END_ONSTOP < 80){
+                    else if (END_ONSTOP < 80.0){
                         return Toast.makeText(this@MatchingActivity, "Below bluetooth speaker threshold",Toast.LENGTH_SHORT).show()
                     }
-                    else if (END_ONSTOP < 100){
+                    else if (END_ONSTOP < 100.0){
                         return Toast.makeText(this@MatchingActivity, "Below smartphone speaker threshold",Toast.LENGTH_SHORT).show()
                     }
-
                 }
             }
         })
-
+        
+        slider.addOnChangeListener(object : Slider.OnChangeListener {
+            override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
+                viewModel.onSeekBarProgressChanged(value)
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

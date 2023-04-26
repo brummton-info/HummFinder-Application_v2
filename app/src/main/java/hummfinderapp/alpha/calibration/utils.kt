@@ -39,3 +39,9 @@ fun decibelFromAbsoluteReverse(input: FloatArray): FloatArray {
         20f * log10(maxValue / input[it])
     }
 }
+
+fun DoubletoFloatFun(input: DoubleArray): FloatArray{
+    return FloatArray(input.size){
+        input[it].toFloat()
+    }
+}

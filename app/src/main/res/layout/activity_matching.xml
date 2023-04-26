@@ -75,12 +75,15 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <SeekBar
+    <com.google.android.material.slider.Slider
         android:id="@+id/matchingSeekBar"
         android:layout_width="233dp"
         android:layout_height="wrap_content"
-        android:progressTint="@color/black"
-        android:thumbTint="@color/black"
+        app:thumbColor="@color/black"
+        app:thumbRadius="7dp"
+        app:trackColorActive="@color/black"
+        app:trackColorInactive="@color/sliderTrackColor"
+        app:haloColor="@color/lightGray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/increaseFrequency"
         app:layout_constraintHorizontal_bias="0.5"
