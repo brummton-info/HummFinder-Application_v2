@@ -72,11 +72,27 @@ class LineChartView @JvmOverloads constructor(
         pathEffect = CornerPathEffect(0f)
     }
 
+    private var contentRectMainPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        style = Paint.Style.STROKE
+        color = Color.parseColor("#BBBBBB")
+        strokeWidth = lineWidth
+        strokeMiter = 2f
+        strokeCap = Paint.Cap.SQUARE
+        pathEffect = CornerPathEffect(0f)
+    }
+
     private var axesLabelPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
         textAlign = Paint.Align.CENTER
         color = Color.BLACK
         textSize = 18.0f
+    }
+
+    private var axesTitlePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        style = Paint.Style.FILL
+        textAlign = Paint.Align.CENTER
+        color = Color.BLACK
+        textSize = 25.0f
     }
 
     private fun populatePath() {
@@ -138,10 +154,10 @@ class LineChartView @JvmOverloads constructor(
 
     private fun updateContentRectAdapter(){
         contentRectAdapter.set(
-            contentRectMain.left + 60.0f,
+            contentRectMain.left + 120.0f,
             contentRectMain.top + 30.0f,
             contentRectMain.right - 30.0f,
-            contentRectMain.bottom - 60.0f
+            contentRectMain.bottom - 100.0f
         )
     }
     private fun updateContentRect() {
@@ -172,16 +188,16 @@ class LineChartView @JvmOverloads constructor(
 
             /* LINEAR SCALE */
             val gridLineSpacingX: Float = contentRect.width()/20.0f //for Linear scale
-            var spacingX = FloatArray(20)
-            for (j in 0..19){
+            var spacingX = FloatArray(19)
+            for (j in 1..19){
                 spacingX += contentRect.left + j * gridLineSpacingX
             }
             return spacingX
         }
         else{
             var gridLineSpacingY: Float = contentRect.height()/14f
-            var spacingY = FloatArray(14)
-            for (i in 0..13){
+            var spacingY = FloatArray(13)
+            for (i in 1..13){
                 spacingY += contentRect.top + i * gridLineSpacingY
             }
             return spacingY
@@ -225,6 +241,17 @@ class LineChartView @JvmOverloads constructor(
         return labelText
     }
 
+    private fun axesTitle(xory: Boolean, width_height: Float): FloatArray {
+        var x_y = FloatArray(2)
+        if (xory){
+
+            return x_y
+        }
+        else {
+            return x_y
+        }
+    }
+
     override fun onSizeChanged(w: Int, h: Int, oldW: Int, oldH: Int) {
         super.onSizeChanged(w, h, oldW, oldH)
         updateContentRectMain()
@@ -245,6 +272,7 @@ class LineChartView @JvmOverloads constructor(
         super.onDraw(canvas)
         canvas.drawPath(renderPath, linePaint)
         canvas.drawRect(contentRect, axesPaint)
+        canvas.drawRect(contentRectMain, contentRectMainPaint)
         //Grid y-axis
         val guideLineSpacingY: FloatArray = gridLineSpacing(false)
         for (i in guideLineSpacingY){
@@ -259,15 +287,22 @@ class LineChartView @JvmOverloads constructor(
         val getxAxisLabels: FloatArray = getXAxisLabels()
         val getxAxisLabelText: FloatArray = getxAxisLabelText()
         getxAxisLabels.forEachIndexed { index, fl -> //i , arr[i]
-            canvas.drawText(getxAxisLabelText[index].toString(), contentRect.left + fl, contentRectMain.bottom - 20.0f, axesLabelPaint)
+            canvas.drawText(getxAxisLabelText[index].toString(), contentRect.left + fl, contentRectMain.bottom - 60.0f, axesLabelPaint)
             //canvas.drawText(fl.toString(), contentRect.left + fl, contentRectMain.bottom - 20.0f, axesLabelPaint)
         }
 
         val getyAxisLabels: FloatArray = getYAxisLabels()
         val getyAxisLabelText: FloatArray = getyAxisLabelText()
         getyAxisLabels.forEachIndexed { index, fl ->
-            canvas.drawText(getyAxisLabelText[index].toString(), contentRectMain.left + 30.0f, contentRect.top + fl + 8.0f, axesLabelPaint)
+            canvas.drawText(getyAxisLabelText[index].toString(), contentRectMain.left + 80.0f, contentRect.top + fl + 8.0f, axesLabelPaint)
         }
+
+        //canvas.drawText("Decibel (dB)", contentRectMain.left + 20.0f, contentRect.height()/2.0f, axesLabelPaint)
+        canvas.save()
+        canvas.rotate(-90.0f,contentRectMain.left + 40.0f,contentRect.height()/2 )
+        canvas.drawText("Decibel (dB)", contentRectMain.left + 40.0f, contentRect.height()/2, axesTitlePaint)
+        canvas.restore()
+        canvas.drawText("Hertz (Hz)", contentRectMain.width()/2, contentRectMain.bottom - 20.0f, axesTitlePaint)
     }
 
 }

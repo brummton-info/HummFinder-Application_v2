@@ -28,11 +28,14 @@
 
     <hummfinderapp.alpha.lineChart.LineChartView
         android:id="@+id/lcv_lineView"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="200dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/calSeekBar"
-        app:layout_constraintEnd_toStartOf="@+id/guide2"
-        app:layout_constraintStart_toStartOf="@+id/guide1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calibrationTitle" />
 
     <ImageButton
@@ -115,6 +118,10 @@
         android:id="@+id/guide2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/Hummfindercolor"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.90" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
