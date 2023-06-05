@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import hummfinderapp.alpha.MainActivity
 import hummfinderapp.alpha.R
-import hummfinderapp.alpha.login.loginactivity
 
 class infoslider : AppCompatActivity() {
 
@@ -37,9 +36,10 @@ class infoslider : AppCompatActivity() {
         // our variables with their ids.
         viewPager = findViewById(R.id.idViewPager)
         skipBtn = findViewById(R.id.idBtnSkip)
-        indicatorSlideOneTV = findViewById(R.id.idTVSlideOne)
-        indicatorSlideTwoTV = findViewById(R.id.idTVSlideTwo)
-        indicatorSlideThreeTV = findViewById(R.id.idTVSlideThree)
+        //circleSlideOneTV =
+        indicatorSlideOneTV = findViewById(R.id.calOneTV)
+        indicatorSlideTwoTV = findViewById(R.id.calTwoTV)
+        indicatorSlideThreeTV = findViewById(R.id.calThreeTV)
 
         // on below line we are adding click listener for our skip button
         //skipBtn.setOnClickListener {

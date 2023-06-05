@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="hummfinderapp.alpha">
 
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,48 +18,49 @@
         android:theme="@style/Theme.HummFinderApp"
         tools:targetApi="31">
         <activity
-            android:name="hummfinderapp.alpha.login.loginactivity"
+            android:name=".unassigned.UnassignedActivity"
+            android:exported="false"
+            android:label="@string/title_activity_unassigned"
+            android:theme="@style/Theme.HummFinderApp.NoActionBar" />
+        <activity
+            android:name=".login.loginactivity"
             android:exported="false" />
         <activity
-            android:name="hummfinderapp.alpha.infoslider.infoslider"
+            android:name=".infoslider.infoslider"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar.Theme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="hummfinderapp.alpha.unassigned.UnassignedActivity">
-<!--            android:parentActivityName="hummfinderapp.alpha.MainActivity">-->
-<!--            <meta-data-->
-<!--                android:name="android.support.PARENT_ACTIVITY"-->
-<!--                android:value="hummfinderapp.alpha.MainActivity" />-->
-        </activity>
-        <activity
-            android:name="hummfinderapp.alpha.calibration.CalibrationActivity">
-<!--            android:parentActivityName="hummfinderapp.alpha.MainActivity">-->
-<!--            <meta-data-->
-<!--                android:name="android.support.PARENT_ACTIVITY"-->
-<!--                android:value="hummfinderapp.alpha.MainActivity" />-->
-        </activity>
-        <activity
-            android:name="hummfinderapp.alpha.matching.MatchingActivity">
-<!--            android:parentActivityName="hummfinderapp.alpha.MainActivity">-->
-<!--            <meta-data-->
-<!--                android:name="android.support.PARENT_ACTIVITY"-->
-<!--                android:value="hummfinderapp.alpha.MainActivity" />-->
-        </activity>
-        <activity
-            android:name="hummfinderapp.alpha.info.InfoActivity">
-<!--            android:parentActivityName="hummfinderapp.alpha.MainActivity"-->
+        <activity android:name=".calibration.CalibrationActivity">
 
-<!--            <meta-data-->
-<!--                android:name="android.support.PARENT_ACTIVITY"-->
-<!--                android:value="hummfinderapp.alpha.MainActivity" />-->
+            <!-- android:parentActivityName="hummfinderapp.alpha.MainActivity"> -->
+            <!-- <meta-data -->
+            <!-- android:name="android.support.PARENT_ACTIVITY" -->
+            <!-- android:value="hummfinderapp.alpha.MainActivity" /> -->
+        </activity>
+        <activity android:name=".matching.MatchingActivity">
+
+            <!-- android:parentActivityName="hummfinderapp.alpha.MainActivity"> -->
+            <!-- <meta-data -->
+            <!-- android:name="android.support.PARENT_ACTIVITY" -->
+            <!-- android:value="hummfinderapp.alpha.MainActivity" /> -->
+        </activity>
+        <activity android:name=".info.InfoActivity">
+
+            <!-- android:parentActivityName="hummfinderapp.alpha.MainActivity" -->
+
+
+            <!-- <meta-data -->
+            <!-- android:name="android.support.PARENT_ACTIVITY" -->
+            <!-- android:value="hummfinderapp.alpha.MainActivity" /> -->
         </activity>
         <activity
-            android:name="hummfinderapp.alpha.MainActivity"
+            android:name=".MainActivity"
             android:exported="false" />
     </application>
+
 </manifest>

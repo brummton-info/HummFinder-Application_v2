@@ -12,6 +12,7 @@ import hummfinderapp.alpha.info.InfoActivity
 import hummfinderapp.alpha.matching.MatchingActivity
 import hummfinderapp.alpha.unassigned.UnassignedActivity
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

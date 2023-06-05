@@ -23,4 +23,5 @@
 
     <!--Matching Activity-->
     <dimen name="matButtonDimensions">48dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

@@ -8,10 +8,7 @@ import android.widget.Toast
 import androidx.lifecycle.*
 import hummfinderapp.alpha.matching.ToneGenerator
 import hummfinderapp.alpha.repository.DataStoreRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.cancel
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import org.jtransforms.fft.FloatFFT_1D
 import kotlin.math.abs
 
@@ -57,6 +54,12 @@ class calibrationViewModel(application: Application): AndroidViewModel(applicati
         return _decibelValuesToSpectrum
     }
 
+    //Coroutine Scope jobs
+    var Coroutinescopeone: Job? = null
+    //var Coroutinescopetwo: Job? = null
+
+
+
     var TGFrequency: Double = 150.0
         set(frequency){
             field = frequency
@@ -80,21 +83,24 @@ class calibrationViewModel(application: Application): AndroidViewModel(applicati
     //STOP TONE GENERATOR
     fun stopToneGenerator(){
         TONEGENERATOR.stop()
+        Coroutinescopeone?.cancel()
         Log.d(TAG, "Tone Generator Stopped > btn")
     }
 
     //INCREASE LEVEL BY ONE
     fun increaseLevelByOne(){
-        val base = 10
-        val exponent = 0.05
-        TGLevel += Math.pow(base.toDouble(),exponent)
+        val base:Double = 10.0
+        val exponent:Double = 0.01
+        TGLevel *= Math.pow(base,exponent)
+        //TGLevel += base.pow(exponent)
     }
 
     //DECREASE LEVEL BY ONE
     fun decreaseLevelByOne(){
-        val base = 10
-        val exponent = 0.05
-        TGLevel -= Math.pow(base.toDouble(),exponent)
+        val base:Double = 10.0
+        val exponent:Double = 0.01
+        TGLevel /= Math.pow(base,exponent)
+        //TGLevel -= base.pow(exponent)
     }
 
     //SEEKBAR
@@ -106,7 +112,7 @@ class calibrationViewModel(application: Application): AndroidViewModel(applicati
     fun audioToSpectrum(audioRecord: AudioRecord){
         Log.d(TAG,"AUDIORECORD TRANSFERED to VIEWMODEL with recording state: ${audioRecord.state} AND ${audioRecord.recordingState} ")
         val recordedSamples = ShortArray(WINDOW_SIZE)
-        viewModelScope.launch {
+        Coroutinescopeone = viewModelScope.launch {
             val fft = FloatFFT_1D(recordedSamples.size.toLong())
 
             while (true) {

@@ -37,7 +37,7 @@
     <!--on below line we are creating
          a simple linear layout-->
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/higherLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -56,7 +56,7 @@
         <!--adding linear layout for
             creating dots view-->
         <LinearLayout
-            android:id="@+id/idLLDots"
+            android:id="@+id/lowerLL"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -68,7 +68,7 @@
             <!--on below line we are creating a text view
                  for displaying our dots-->
             <TextView
-                android:id="@+id/idTVSlideOne"
+                android:id="@+id/calOneTV"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -83,7 +83,7 @@
             <!--on below line we are creating a text view
                  for displaying our dots-->
             <TextView
-                android:id="@+id/idTVSlideTwo"
+                android:id="@+id/calTwoTV"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -98,7 +98,7 @@
             <!--on below line we are creating a text view
                 for displaying our dots-->
             <TextView
-                android:id="@+id/idTVSlideThree"
+                android:id="@+id/calThreeTV"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
