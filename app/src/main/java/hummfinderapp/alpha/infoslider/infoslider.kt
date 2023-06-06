@@ -100,6 +100,7 @@ class infoslider : AppCompatActivity() {
 
     // creating a method for view pager for on page change listener.
     var viewListener: ViewPager.OnPageChangeListener = object : ViewPager.OnPageChangeListener {
+
         override fun onPageScrolled(
             position: Int,
             positionOffset: Float,

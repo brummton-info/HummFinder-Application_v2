@@ -18,10 +18,8 @@
         android:theme="@style/Theme.HummFinderApp"
         tools:targetApi="31">
         <activity
-            android:name=".unassigned.UnassignedActivity"
-            android:exported="false"
-            android:label="@string/title_activity_unassigned"
-            android:theme="@style/Theme.HummFinderApp.NoActionBar" />
+            android:name=".CalibrationActivityTwo"
+            android:exported="false" />
         <activity
             android:name=".login.loginactivity"
             android:exported="false" />
