@@ -28,8 +28,8 @@
 
     <hummfinderapp.alpha.lineChart.LineChartView
         android:id="@+id/lcv_lineView"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_width="389dp"
+        android:layout_height="402dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@color/white"
@@ -58,9 +58,8 @@
         android:id="@+id/calSeekBar"
         android:layout_width="233dp"
         android:layout_height="wrap_content"
-        android:stepSize="5"
-        android:valueFrom="0"
-        android:valueTo="100"
+        android:valueFrom="-100"
+        android:valueTo="0"
         app:haloColor="@color/sliderThumbHalo"
         app:layout_constraintBottom_toTopOf="@+id/btnCalPlay"
         app:layout_constraintEnd_toStartOf="@+id/calPlusButton"

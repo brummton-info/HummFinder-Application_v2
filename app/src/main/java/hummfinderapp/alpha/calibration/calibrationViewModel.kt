@@ -89,23 +89,25 @@ class calibrationViewModel(application: Application): AndroidViewModel(applicati
 
     //INCREASE LEVEL BY ONE
     fun increaseLevelByOne(){
-        val base:Double = 10.0
-        val exponent:Double = 0.01
+        val base = 10.0
+        val exponent = 0.05
         TGLevel *= Math.pow(base,exponent)
-        //TGLevel += base.pow(exponent)
+        // Stop at max amplitude otherwise clipping of sound
+        if(TGLevel > 1) TGLevel = 1.0
+        // Minimal level to -100 dBFS
+        if(TGLevel <= 0.0) TGLevel = 0.00001
     }
 
     //DECREASE LEVEL BY ONE
     fun decreaseLevelByOne(){
-        val base:Double = 10.0
-        val exponent:Double = 0.01
+        val base = 10.0
+        val exponent = 0.05
         TGLevel /= Math.pow(base,exponent)
-        //TGLevel -= base.pow(exponent)
     }
 
     //SEEKBAR
     fun onSeekBarProgressChanged(progress:Float){
-        TGLevel = progress.toDouble()
+        TGLevel = Math.pow(10.0, progress.toDouble()/20)
     }
 
     //AUDIO AND SPECTRUM
@@ -167,29 +169,29 @@ class calibrationViewModel(application: Application): AndroidViewModel(applicati
         return bitmap
     }
 
-    //VIKTOR > ADD HISTOGRAM ROW
-    private fun addHistogramRow(newRow: IntArray) {
-        if (newRow.size != WIDTH) throw IllegalArgumentException(
-            "The size of the new row must be: $WIDTH, instead it is ${newRow.size}"
-        )
-        val spectrogramArray = spectrogramColorArray.value?: return
-        // Shift array forward by one Row
-        spectrogramArray.copyInto(
-            spectrogramArray,
-            WIDTH,
-            0,
-            spectrogramArray.size - WIDTH
-        )
-        newRow.copyInto(spectrogramArray)
-        spectrogramColorArray.value = spectrogramColorArray.value
-    }
-
-    //ON CLEARED
-    override fun onCleared() {
-        super.onCleared()
-
-        //STOP TONE GENERATOR
-        TONEGENERATOR.stop()
+        //VIKTOR > ADD HISTOGRAM ROW
+        private fun addHistogramRow(newRow: IntArray) {
+            if (newRow.size != WIDTH) throw IllegalArgumentException(
+                "The size of the new row must be: $WIDTH, instead it is ${newRow.size}"
+            )
+            val spectrogramArray = spectrogramColorArray.value?: return
+            // Shift array forward by one Row
+            spectrogramArray.copyInto(
+                spectrogramArray,
+                WIDTH,
+                0,
+                spectrogramArray.size - WIDTH
+            )
+            newRow.copyInto(spectrogramArray)
+            spectrogramColorArray.value = spectrogramColorArray.value
+        }
+    
+        //ON CLEARED
+        override fun onCleared() {
+            super.onCleared()
+    
+            //STOP TONE GENERATOR
+            TONEGENERATOR.stop()
 
         //STOP SPECTRUM
     }

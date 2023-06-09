@@ -20,6 +20,7 @@ import com.google.android.material.slider.Slider
 import hummfinderapp.alpha.R
 import hummfinderapp.alpha.databinding.ActivityCalibrationBinding
 import hummfinderapp.alpha.lineChart.LineChartAdapter
+import hummfinderapp.alpha.matching.ToneGenerator
 import kotlinx.android.synthetic.main.activity_calibration.*
 
 const val REQUEST_CODE = 200
@@ -108,12 +109,13 @@ class CalibrationActivity : AppCompatActivity() {
 
         CalPlusButton.setOnClickListener {
             if(isRecording) viewModel.increaseLevelByOne()
+            if(isRecording) slider.value = (20*Math.log10(viewModel.TGLevel)).toFloat()
         }
 
         CalMinusButton.setOnClickListener {
             if(isRecording) viewModel.decreaseLevelByOne()
+            if(isRecording) slider.value = (20*Math.log10(viewModel.TGLevel)).toFloat()
         }
-
 
         slider.addOnSliderTouchListener(object: Slider.OnSliderTouchListener {
             override fun onStartTrackingTouch(slider: Slider) {
